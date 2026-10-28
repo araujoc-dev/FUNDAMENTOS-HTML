@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Natureza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"><h1>Contato</h1></header>
+    <nav class="nav" aria-label="Navegação principal">
+        <a href="index.html">Home</a>
+        <a href="audio.html">Blog (áudio)</a>
+        <a href="video.html">Página vídeo</a>
+        <a href="iframe.html">Página iframe</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+    <main class="content">
+        <h2>Fale conosco</h2>
+        <p>Preencha o formulário abaixo. Este exemplo é apenas visual e não envia os dados a um servidor.</p>
+        <form action="#" method="post" onsubmit="alert('Exemplo: formulário preenchido!'); return false;">
+            <p><label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required></p>
+            <p><label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required></p>
+            <p><label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea></p>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer class="footer"><p>&copy; 2026 Site Natureza</p></footer>
+</body>
+</html>

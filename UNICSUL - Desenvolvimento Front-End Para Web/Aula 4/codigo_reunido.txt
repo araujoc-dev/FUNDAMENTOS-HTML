@@ -1,0 +1,125 @@
+# Código reunido — Slide 04 da Aula-S.pdf
+
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Multimídia - Natureza</title>
+    <!-- Ligação com o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Natureza</h1>
+    </header>
+
+    <nav class="nav" aria-label="Navegação principal">
+        <a href="#">Home</a>
+        <a href="#">Blog (áudio)</a>
+        <a href="#">Página vídeo</a>
+        <a href="#">Página iframe</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main class="content">
+        <h2>Natureza</h2>
+        <p>
+            Florestas tropicais: o lar de milhões de espécies,
+            onde a luz do sol filtra as copas das árvores.
+        </p>
+
+        <div class="video-container">
+            <video controls>
+                <source src="videoplayback.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <address>
+            Universidade Cruzeiro do Sul<br>
+            Avenida da Tecnologia, 100<br>
+            São Paulo - SP<br>
+            E-mail: contato@universidade.com
+        </address>
+        <p>&copy; 2026 Universidade Cruzeiro do Sul</p>
+    </footer>
+</body>
+</html>
+```
+
+## style.css
+
+```css
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+    color: rgb(62, 61, 61);
+}
+
+.header {
+    background-color: aqua;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.nav {
+    background-color: darkgreen;
+    text-align: center;
+    padding: 15px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.content h2 {
+    color: chartreuse;
+}
+
+.video-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px;
+}
+
+.footer {
+    background-color: azure;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+```
+
+## Observações
+- O exemplo principal foi reunido a partir dos slides 34–38 (HTML e CSS da página multimídia Natureza).
+- Coloque `index.html`, `style.css` e o arquivo de vídeo `videoplayback.mp4` na mesma pasta para o vídeo funcionar.
+- Os outros trechos do PDF (áudio, exemplos isolados de formulário, `select`, `textarea`, `fieldset`, `datalist` etc.) são exemplos independentes e não pertencem ao mesmo site; por isso não foram misturados à página principal.
