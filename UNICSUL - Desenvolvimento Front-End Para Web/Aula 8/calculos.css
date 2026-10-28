@@ -1,0 +1,122 @@
+/* Vários cálculos em JS — estilo "papel quadriculado" */
+
+:root {
+    --fundo: #e9f1ee;
+    --folha: #fbfdfc;
+    --quadricula: #d3e2dc;
+    --tinta: #16342c;
+    --tinta-suave: #587068;
+    --destaque: #0f7a5c;
+    --destaque-hover: #0a5a44;
+    --foco: #f2b01e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    background: var(--fundo);
+    color: var(--tinta);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0 0 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+button {
+    padding: 0.8rem 1.6rem;
+    border: 0;
+    border-radius: 6px;
+    background: var(--destaque);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+button:hover {
+    background: var(--destaque-hover);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 3px;
+}
+
+/* Área do resultado: papel quadriculado */
+#result {
+    width: 100%;
+    max-width: 34rem;
+    margin-top: 1.75rem;
+    padding: 1.5rem;
+    background-color: var(--folha);
+    background-image:
+        linear-gradient(var(--quadricula) 1px, transparent 1px),
+        linear-gradient(90deg, var(--quadricula) 1px, transparent 1px);
+    background-size: 1.6rem 1.6rem;
+    border: 1px solid var(--quadricula);
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(22, 52, 44, 0.08);
+}
+
+#result p {
+    margin: 0;
+    padding: 0.2rem 0;
+}
+
+#result > p:only-child {
+    color: var(--tinta-suave);
+    font-style: italic;
+}
+
+/* Número analisado */
+#result strong {
+    padding: 0 0.3em;
+    background: var(--destaque);
+    border-radius: 3px;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+#result hr {
+    margin: 0.9rem 0;
+    border: 0;
+    border-top: 2px solid var(--destaque);
+}
+
+/* Expoentes (n², n³) sem desalinhar a linha */
+#result sup {
+    font-size: 0.7em;
+    line-height: 0;
+}
+
+@media (max-width: 480px) {
+    #result {
+        padding: 1.1rem 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PixelPulse - Notícias, análises, e-sports e hardware do mundo dos games." />
+  <title>PixelPulse | Notícias do Mundo dos Games</title>
+
+  <!-- Fontes: Inter (texto) e Poppins (títulos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAVEGAÇÃO ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo" aria-label="PixelPulse - página inicial">
+        <span class="logo-icon">▶</span>Pixel<span class="accent">Pulse</span>
+      </a>
+
+      <!-- Botão hambúrguer (visível só no mobile) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio" class="active">Início</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#analises">Análises</a></li>
+          <li><a href="#esports">E-sports</a></li>
+          <li><a href="#hardware">Hardware</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ============ HERO / DESTAQUE DO DIA ============ -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <article class="hero-card">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80"
+             alt="Setup gamer com iluminação neon" class="hero-img" />
+        <div class="hero-overlay">
+          <span class="tag tag-lime">Destaque do dia</span>
+          <h1 id="hero-title">A nova geração de consoles chega com 8K e ray tracing em tempo real</h1>
+          <p>Fabricantes revelam detalhes dos próximos lançamentos e prometem uma revolução em desempenho e imersão.</p>
+          <div class="meta">
+            <span>Por Redação PixelPulse</span> • <time datetime="2026-10-23">23 out 2026</time> • <span>6 min de leitura</span>
+          </div>
+          <button class="btn-like" data-like aria-pressed="false">♡ <span class="like-count">128</span></button>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ CONTEÚDO PRINCIPAL + SIDEBAR ============ -->
+    <div class="container layout">
+
+      <!-- Coluna principal -->
+      <section class="news-section" id="noticias" aria-labelledby="news-title">
+        <div class="section-head">
+          <h2 id="news-title">Últimas <span class="accent">notícias</span></h2>
+
+          <!-- Filtros por categoria -->
+          <div class="filters" role="tablist" aria-label="Filtrar por categoria">
+            <button class="filter-btn active" data-filter="all" role="tab">Todas</button>
+            <button class="filter-btn" data-filter="analises" role="tab">Análises</button>
+            <button class="filter-btn" data-filter="esports" role="tab">E-sports</button>
+            <button class="filter-btn" data-filter="hardware" role="tab">Hardware</button>
+            <button class="filter-btn" data-filter="cultura" role="tab">Cultura Pop</button>
+          </div>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+
+          <article class="card" data-category="analises" id="analises">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="Controle de videogame" loading="lazy" />
+              <span class="tag tag-cyan">Análise</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#">Review: o RPG que redefine mundos abertos em 2026</a></h3>
+              <p>Narrativa afiada, combate fluido e um mapa que convida à exploração. Vale cada hora.</p>
+              <div class="card-footer">
+                <span class="meta">Há 2 horas</span>
+                <button class="btn-like small" data-like aria-pressed="false">♡ <span class="like-count">42</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="esports" id="esports">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=800&q=80" alt="Torneio de e-sports com plateia" loading="lazy" />
+              <span class="tag tag-purple">E-sports</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#">Brasileiros avançam às semifinais do mundial e levam a torcida à loucura</a></h3>
+              <p>Time nacional vence série eletrizante por 3 a 2 e garante vaga entre os quatro melhores.</p>
+              <div class="card-footer">
+                <span class="meta">Há 4 horas</span>
+                <button class="btn-like small" data-like aria-pressed="false">♡ <span class="like-count">97</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="hardware" id="hardware">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80" alt="Placa de vídeo de alto desempenho" loading="lazy" />
+              <span class="tag tag-lime">Hardware</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#">Nova placa de vídeo promete dobrar o desempenho com menos consumo</a></h3>
+              <p>Benchmarks preliminares apontam ganhos expressivos em jogos 4K com ray tracing ativado.</p>
+              <div class="card-footer">
+                <span class="meta">Há 6 horas</span>
+                <button class="btn-like small" data-like aria-pressed="false">♡ <span class="like-count">63</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="cultura">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Fliperama retrô com luzes coloridas" loading="lazy" />
+              <span class="tag tag-cyan">Cultura Pop</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#">Nostalgia em alta: clássicos dos anos 90 ganham remasterizações</a></h3>
+              <p>Estúdios apostam em relançamentos para conquistar veteranos e novos jogadores.</p>
+              <div class="card-footer">
+                <span class="meta">Ontem</span>
+                <button class="btn-like small" data-like aria-pressed="false">♡ <span class="like-count">35</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="analises">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=800&q=80" alt="Jogador em ambiente escuro" loading="lazy" />
+              <span class="tag tag-cyan">Análise</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#">Indie do ano? Pequeno estúdio brasileiro surpreende a crítica</a></h3>
+              <p>Direção de arte ousada e trilha marcante fazem do título um fenômeno de boca a boca.</p>
+              <div class="card-footer">
+                <span class="meta">Ontem</span>
+                <button class="btn-like small" data-like aria-pressed="false">♡ <span class="like-count">54</span></button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-category="hardware">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=80" alt="Teclado mecânico gamer com RGB" loading="lazy" />
+              <span class="tag tag-lime">Hardware</span>
+            </div>
+            <div class="card-body">
+              <h3><a href="#">Guia: como montar um setup gamer completo sem estourar o orçamento</a></h3>
+              <p>Do monitor ao teclado mecânico, veja onde vale investir e onde dá para economizar.</p>
+              <div class="card-footer">
+                <span class="meta">2 dias atrás</span>
+                <button class="btn-like small" data-like aria-pressed="false">♡ <span class="like-count">81</span></button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="empty-msg" id="emptyMsg" hidden>Nenhuma notícia encontrada nesta categoria.</p>
+      </section>
+
+      <!-- ============ SIDEBAR ============ -->
+      <aside class="sidebar" aria-label="Barra lateral">
+
+        <section class="widget">
+          <h2 class="widget-title">🔥 Mais <span class="accent">lidas</span></h2>
+          <ol class="top-list">
+            <li><a href="#">Vazam detalhes do próximo grande lançamento da franquia mais aguardada</a></li>
+            <li><a href="#">Os 10 melhores jogos cooperativos para jogar com amigos</a></li>
+            <li><a href="#">Campeonato brasileiro de e-sports bate recorde de audiência</a></li>
+            <li><a href="#">Processadores de nova geração: vale a pena trocar agora?</a></li>
+            <li><a href="#">Série baseada em game famoso ganha data de estreia</a></li>
+          </ol>
+        </section>
+
+        <section class="widget">
+          <h2 class="widget-title">Tópicos <span class="accent">populares</span></h2>
+          <div class="chips">
+            <a href="#" class="chip">#RPG</a>
+            <a href="#" class="chip">#FPS</a>
+            <a href="#" class="chip">#Indie</a>
+            <a href="#" class="chip">#PC Gamer</a>
+            <a href="#" class="chip">#Streaming</a>
+            <a href="#" class="chip">#Retrô</a>
+            <a href="#" class="chip">#Mobile</a>
+          </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="widget newsletter">
+          <h2 class="widget-title">📬 <span class="accent">Newsletter</span></h2>
+          <p>Receba as principais notícias gamer direto no seu e-mail.</p>
+          <form id="newsletterForm" novalidate>
+            <label for="email" class="sr-only">Seu e-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            <button type="submit" class="btn-primary">Assinar</button>
+            <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#inicio" class="logo"><span class="logo-icon">▶</span>Pixel<span class="accent">Pulse</span></a>
+        <p class="footer-text">Seu portal de notícias, análises e cultura gamer.</p>
+      </div>
+      <div>
+        <h4>Links rápidos</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#analises">Análises</a></li>
+          <li><a href="#esports">E-sports</a></li>
+          <li><a href="#hardware">Hardware</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Contato</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Redes sociais</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Twitch</a></li>
+          <li><a href="#">Discord</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 PixelPulse — Projeto acadêmico de Desenvolvimento Web. Site fictício, sem fins comerciais. Imagens: Unsplash.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

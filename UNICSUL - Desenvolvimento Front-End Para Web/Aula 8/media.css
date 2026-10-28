@@ -1,0 +1,113 @@
+/* Média com JS — estilo "caderno escolar" */
+
+:root {
+    --papel: #eef3f8;
+    --folha: #ffffff;
+    --tinta: #1d2b4f;
+    --tinta-suave: #5a6785;
+    --linha: #cfdae8;
+    --margem: #e4707a;
+    --marca-texto: #ffe566;
+    --botao: #2a4a9a;
+    --botao-hover: #1d3677;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    background: var(--papel);
+    color: var(--tinta);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0 0 1.5rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+button {
+    padding: 0.8rem 1.6rem;
+    border: 0;
+    border-radius: 6px;
+    background: var(--botao);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+}
+
+button:hover {
+    background: var(--botao-hover);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--marca-texto);
+    outline-offset: 3px;
+}
+
+/* Área do resultado: folha pautada com margem vermelha */
+section {
+    width: 100%;
+    max-width: 34rem;
+    margin-top: 1.75rem;
+    padding: 1.5rem 1.5rem 1.5rem 3.5rem;
+    background-color: var(--folha);
+    background-image:
+        linear-gradient(to right, transparent 2.4rem, var(--margem) 2.4rem, var(--margem) calc(2.4rem + 2px), transparent calc(2.4rem + 2px)),
+        repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.6rem - 1px), var(--linha) calc(1.6rem - 1px), var(--linha) 1.6rem);
+    border: 1px solid var(--linha);
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(29, 43, 79, 0.08);
+}
+
+section p {
+    margin: 0;
+    line-height: 1.6rem; /* alinha o texto com as linhas do caderno */
+}
+
+section p + p {
+    margin-top: 1.6rem;
+}
+
+/* Destaques (<mark>) como marca-texto */
+mark {
+    padding: 0 0.25em;
+    background: linear-gradient(transparent 20%, var(--marca-texto) 20%);
+    color: var(--tinta);
+    font-weight: 600;
+}
+
+#res > p:only-child {
+    color: var(--tinta-suave);
+    font-style: italic;
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.25rem 1rem 1.25rem 3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}

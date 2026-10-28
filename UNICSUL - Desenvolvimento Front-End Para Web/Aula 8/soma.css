@@ -1,0 +1,121 @@
+:root {
+    --papel: #f3f8f6;
+    --grade: #cfe3dc;
+    --tinta: #1d2f5c;
+    --tinta-suave: #4b5b85;
+    --marca: #ffe66d;
+    --destaque: #1d2f5c;
+    --cartao: #ffffff;
+    --margem: #e9857b;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --papel: #14201f;
+        --grade: #223533;
+        --tinta: #e6efff;
+        --tinta-suave: #a5b4d6;
+        --marca: #f2d64b;
+        --destaque: #e6efff;
+        --cartao: #1b2c2a;
+        --margem: #d9776d;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+    margin: 0;
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: "Lexend", "Segoe UI", system-ui, sans-serif;
+    color: var(--tinta);
+    background-color: var(--papel);
+    /* caderno quadriculado */
+    background-image:
+        linear-gradient(var(--grade) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grade) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+h1 {
+    margin: 2rem 0 0;
+    max-width: 18ch;
+    text-align: center;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+button {
+    font: inherit;
+    font-weight: 600;
+    padding: 0.85rem 1.75rem;
+    color: var(--papel);
+    background: var(--destaque);
+    border: 2px solid var(--destaque);
+    border-radius: 6px;
+    box-shadow: 4px 4px 0 var(--margem);
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 var(--margem);
+}
+
+button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 0 var(--margem);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--marca);
+    outline-offset: 3px;
+}
+
+section#res {
+    width: min(100%, 34rem);
+    min-height: 5.5rem;
+    padding: 1.5rem 1.75rem 1.5rem 2.75rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    background: var(--cartao);
+    border: 2px solid var(--tinta);
+    border-radius: 6px;
+    /* margem vermelha de caderno */
+    background-image: linear-gradient(90deg, transparent 1.75rem, var(--margem) 1.75rem, var(--margem) calc(1.75rem + 2px), transparent calc(1.75rem + 2px));
+}
+
+section#res p {
+    margin: 0;
+}
+
+section#res p:only-child:empty::before,
+section#res:empty::before {
+    content: "O resultado vem aqui...";
+    color: var(--tinta-suave);
+}
+
+mark {
+    padding: 0.1em 0.35em;
+    color: var(--tinta);
+    background: var(--marca);
+    border-radius: 3px;
+}
+
+strong {
+    font-size: 1.35em;
+    font-weight: 700;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button { transition: none; }
+}

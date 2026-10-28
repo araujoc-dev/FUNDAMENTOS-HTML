@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exemplos de JavaScript — Aula 06</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 30px auto; padding: 0 18px; line-height: 1.5; }
+    section { border: 1px solid #ddd; border-radius: 8px; padding: 18px; margin: 18px 0; }
+    button { padding: 9px 14px; cursor: pointer; }
+    .area { color: white; width: fit-content; min-width: 130px; padding: 28px; text-align: center; background: #D94A38; cursor: pointer; user-select: none; }
+    .hover-area { background: #D94A38; }
+    code { background: #f3f3f3; padding: 2px 5px; }
+  </style>
+</head>
+<body>
+  <h1>Exemplos de JavaScript — Aula 06</h1>
+  <p>Os exemplos dos slides foram reunidos nesta página para facilitar o teste. Cada seção demonstra uma função ou evento.</p>
+
+  <section>
+    <h2>1. Função e condição (if/else)</h2>
+    <p>Verifica o sabor armazenado na variável <code>iceCream</code> e mostra uma mensagem.</p>
+    <button type="button" onclick="verificarSorvete()">Executar exemplo</button>
+  </section>
+
+  <section>
+    <h2>2. Evento onclick</h2>
+    <h3 id="tituloClique" onclick="this.innerHTML='Isso acontece quando usamos o evento onClick!'">
+      Clique neste título para testar o evento onClick!
+    </h3>
+    <button type="button" onclick="resetarTitulo()">Restaurar título</button>
+  </section>
+
+  <section>
+    <h2>3. Eventos onmousedown e onmouseup</h2>
+    <div id="areaClique" class="area" onmousedown="mDown(this)" onmouseup="mUp(this)" onmouseleave="mUp(this)">
+      Clique e segure aqui
+    </div>
+  </section>
+
+  <section>
+    <h2>4. Eventos onmouseover e onmouseout</h2>
+    <div class="area hover-area" onmouseover="mOver(this)" onmouseout="mOut(this)">
+      Passe o mouse em mim
+    </div>
+  </section>
+
+  <script>
+    // Exemplo de função e condição apresentado nos slides.
+    function verificarSorvete() {
+      let iceCream = "Chocolate";
+
+      if (iceCream === "Chocolate") {
+        alert("Sim, eu amo sorvete de chocolate");
+      } else {
+        alert("Aaah, mas chocolate é o meu favorito");
+      }
+    }
+
+    // Restaura o texto do exemplo onclick.
+    function resetarTitulo() {
+      document.getElementById("tituloClique").innerHTML =
+        "Clique neste título para testar o evento onClick!";
+    }
+
+    // Executada quando o usuário pressiona o botão do mouse.
+    function mDown(obj) {
+      obj.style.backgroundColor = "#1ec5e5";
+      obj.innerHTML = "Solte o clique";
+    }
+
+    // Executada quando o usuário solta o botão do mouse.
+    function mUp(obj) {
+      obj.style.backgroundColor = "#D94A38";
+      obj.innerHTML = "Obrigado";
+    }
+
+    // Executada quando o mouse entra no elemento.
+    function mOver(obj) {
+      obj.innerHTML = "Obrigado";
+    }
+
+    // Executada quando o mouse sai do elemento.
+    function mOut(obj) {
+      obj.innerHTML = "Passe o mouse em mim";
+    }
+  </script>
+</body>
+</html>
