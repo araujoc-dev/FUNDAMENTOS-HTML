@@ -1,0 +1,64 @@
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Título */
+h1 {
+    font-size: 38px;
+    color: #ffffff;
+    text-shadow: 0 0 10px #a020f0,
+                 0 0 25px #8a2be2;
+}
+
+/* Botão */
+button {
+    background: #8a2be2;
+    color: white;
+    border: 2px solid #bf5fff;
+    padding: 15px 35px;
+    border-radius: 10px;
+
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow: 0 0 10px #8a2be2,
+                0 0 25px #8a2be2;
+
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background: #a020f0;
+    transform: scale(1.08);
+
+    box-shadow: 0 0 15px #bf5fff,
+                0 0 35px #a020f0,
+                0 0 55px #8a2be2;
+}
+
+/* Resultado */
+#resultado {
+    color: #d8a5ff;
+    font-size: 24px;
+    font-weight: bold;
+
+    text-shadow: 0 0 10px #a020f0;
+}

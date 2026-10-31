@@ -1,0 +1,115 @@
+
+/* Configuração geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    padding: 20px;
+    animation: aparecer 1s ease;
+}
+
+/* Título */
+h1 {
+    font-size: 2.5rem;
+    color: #00e5ff;
+    text-align: center;
+    text-shadow: 0 0 15px #00e5ff80;
+    animation: deslizar 1s ease;
+}
+
+/* Botões */
+button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px #0072ff50;
+}
+
+/* Animação dos botões */
+button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px #00c6ff80;
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Área dos números e resultado */
+p {
+    min-width: 280px;
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff15;
+    border: 1px solid #00e5ff50;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    overflow-wrap: anywhere;
+    box-shadow: 0 5px 20px #00000030;
+    transition: all 0.4s ease;
+}
+
+/* Efeito ao passar o mouse */
+p:hover {
+    transform: scale(1.03);
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px #00e5ff40;
+}
+
+/* Animações */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes deslizar {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 90%;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
